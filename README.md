@@ -20,3 +20,6 @@ identifier[0] = urlId;
 contentManager = MPPlayableContentManager.Shared;
 contentManager.NowPlayingIdentifiers = identifier;
 ```
+
+### For More Reference
+- [Car Play Guide](https://developer.apple.com/carplay/documentation/CarPlay-App-Programming-Guide.pdf)
