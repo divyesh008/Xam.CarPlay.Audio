@@ -23,3 +23,4 @@ contentManager.NowPlayingIdentifiers = identifier;
 
 ### For More Reference
 - [Car Play Guide](https://developer.apple.com/carplay/documentation/CarPlay-App-Programming-Guide.pdf)
+- [Car Play Audio App Guide](https://developer.apple.com/carplay/documentation/CarPlay-Audio-App-Programming-Guide.pdf)
