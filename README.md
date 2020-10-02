@@ -28,4 +28,4 @@ contentManager.NowPlayingIdentifiers = identifier;
 
 ## Output:
 
-![](name-of-giphy.gif)
+![Alt Text](https://s1.gifyu.com/images/CarPlayOutput.gif)
