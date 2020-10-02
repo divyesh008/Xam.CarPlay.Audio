@@ -15,7 +15,7 @@ namespace XamRadio.iOS.Helpers
                 {
                     //Container
                     var item = new MPContentItem("11111");
-                    item.Title = "WebRadio";
+                    item.Title = "PlayList";
                     item.Container = true;
                     item.Playable = false;
                     return item;
@@ -23,11 +23,13 @@ namespace XamRadio.iOS.Helpers
                 else
                 {
                     //Items
-                    var item = new MPContentItem("Test" + indexPath.Length);
-                    item.Title = "Title" + indexPath.Length;
-                    item.Subtitle = "Subtitle" + indexPath.Length;
+                    var song = GlobalConstants.PlayLists[indexPath.Row];
+                    var item = new MPContentItem(song.Id);
+                    item.Title = song.Name;
+                    item.Subtitle = song.Editor;
                     item.Playable = true;
                     item.StreamingContent = true;
+                    item.Artwork = new MPMediaItemArtwork(image: ExtractArtWork.UIImageFromUrl(song.ArtWork));
                     return item;
                 }
             }
@@ -44,7 +46,7 @@ namespace XamRadio.iOS.Helpers
             {
                 return 1;
             }
-            return 1;
+            return GlobalConstants.PlayLists.Count;
         }
     }
 }

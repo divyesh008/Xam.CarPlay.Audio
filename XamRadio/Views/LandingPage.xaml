@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamRadio.Views.LandingPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             Padding="0"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10">
+            <!--<Label Text="Welcome to Xam CarPlay !" HorizontalOptions="Center" VerticalOptions="Start" FontSize="Medium"/>-->
+            <flv:FlowListView x:Name="listView" FlowItemsSource="{Binding PlayLists}" FlowColumnCount="1" HasUnevenRows="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Grid RowSpacing="5" ColumnSpacing="15" Padding="20,10" VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Style="{StaticResource ImageFrameStyle}" VerticalOptions="Start">
+                                    <ffimageloading:CachedImage Source="{Binding ArtWork}" HeightRequest="40" WidthRequest="40" VerticalOptions="StartAndExpand" />
+                                </Frame>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Id}" Style="{StaticResource RobotoRegularSize16LabelStyle}" HorizontalOptions="StartAndExpand" FontSize="16" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Name}" HorizontalOptions="StartAndExpand" Style="{StaticResource RobotoBoldSize20LabelStyle}" />
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Editor}" HorizontalOptions="StartAndExpand" Style="{StaticResource RobotoRegularSize16LabelStyle}" />
+                                <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Source="{Binding PlayPauseIcon, Mode=TwoWay}" HeightRequest="35" WidthRequest="35" VerticalOptions="Center" HorizontalOptions="End"/>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference listView}, Path=BindingContext.PlayCommand}" CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                             <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Black"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+            </flv:FlowListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

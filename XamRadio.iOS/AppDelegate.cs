@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using DLToolkit.Forms.Controls;
 using Foundation;
 using MediaManager;
 using UIKit;
@@ -27,6 +27,8 @@ namespace XamRadio.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             CrossMediaManager.Current.Init();
+            FlowListView.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

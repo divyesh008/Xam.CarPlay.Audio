@@ -14,9 +14,25 @@
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Plugin.MediaManager" Version="1.0.3" />
-    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.9.7" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="1.0.3" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interface\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Model\" />
+    <Folder Include="Views\" />
+    <Folder Include="Service\" />
+    <Folder Include="Font\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Font\Roboto-Bold.ttf" />
+    <None Remove="Font\Roboto-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Font\Roboto-Bold.ttf" />
+    <EmbeddedResource Include="Font\Roboto-Regular.ttf" />
   </ItemGroup>
 </Project>
