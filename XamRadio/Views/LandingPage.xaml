@@ -34,7 +34,7 @@
                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding Id}" Style="{StaticResource RobotoRegularSize16LabelStyle}" HorizontalOptions="StartAndExpand" FontSize="16" />
                                 <Label Grid.Row="1" Grid.Column="1" Text="{Binding Name}" HorizontalOptions="StartAndExpand" Style="{StaticResource RobotoBoldSize20LabelStyle}" />
                                 <Label Grid.Row="2" Grid.Column="1" Text="{Binding Editor}" HorizontalOptions="StartAndExpand" Style="{StaticResource RobotoRegularSize16LabelStyle}" />
-                                <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Source="{Binding PlayPauseIcon, Mode=TwoWay}" HeightRequest="35" WidthRequest="35" VerticalOptions="Center" HorizontalOptions="End"/>
+                                <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Source="{Binding PlayPauseIcon}" HeightRequest="35" WidthRequest="35" VerticalOptions="Center" HorizontalOptions="End"/>
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={x:Reference listView}, Path=BindingContext.PlayCommand}" CommandParameter="{Binding .}" />
                                 </Grid.GestureRecognizers>

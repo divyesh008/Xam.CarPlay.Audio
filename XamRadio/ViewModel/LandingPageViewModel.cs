@@ -36,7 +36,7 @@ namespace XamRadio.ViewModel
                 if (CrossMediaManager.Current.IsPlaying())
                 {
                     await CrossMediaManager.Current.Pause();
-                    obj.PlayPauseIcon = "play";
+                    obj.IsPlaying = false;
                 }
                 else
                 {
@@ -45,7 +45,7 @@ namespace XamRadio.ViewModel
                         await CrossMediaManager.Current.Play(item);
                     else
                         await CrossMediaManager.Current.Play();
-                    obj.PlayPauseIcon = "pause";
+                    obj.IsPlaying = true;
                 }
             }
             catch (Exception ex)
