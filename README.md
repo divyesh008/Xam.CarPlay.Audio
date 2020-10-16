@@ -3,6 +3,8 @@
 
 #### CarPlay audio apps are controlled by the MPPlayableContentManager. You are required to implement the MPPlayableContentDelegate and MPPlayableContentDatasource protocol in order to connect with CarPlay. The UI is controlled by CarPlay - all you need to do is feed it data for tabs+tables (datasource) and respond to playable items (delegate).
 
+<img src="https://s1.gifyu.com/images/api-CARPLAY.png" width="680" height="450">
+
 ## How to get NowPlaying Screen?
 To get the NowPlaying screen you have to set two things without fail.
 - MPRemoteCommandCenter
@@ -24,3 +26,8 @@ contentManager.NowPlayingIdentifiers = identifier;
 ### For More Reference
 - [Car Play Guide](https://developer.apple.com/carplay/documentation/CarPlay-App-Programming-Guide.pdf)
 - [Car Play Audio App Guide](https://developer.apple.com/carplay/documentation/CarPlay-Audio-App-Programming-Guide.pdf)
+
+
+## Output:
+
+![Alt Text](https://s1.gifyu.com/images/CarPlayOutput.gif)
